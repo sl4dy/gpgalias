@@ -7,4 +7,14 @@ Purpose of this solution is to encrypt incoming emails by PGP/GPG key and forwar
 
 <img style="float: right" src="pic">
 
-Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVirus, SpamAssassin, Postgrey, Roundcube and Postfix Admin and [gpgit](https://github.com/mikecardwell/gpgit). All this software is installed from Ubuntu 12.04 repostiories, unless said otherwise.
+Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVirus, SpamAssassin, Postgrey, Roundcube and Postfix Admin and [gpgit](https://github.com/mikecardwell/gpgit). All this software is installed from standard Ubuntu 12.04 repositories, unless said otherwise.
+
+## Detailed flow
+<img style="float: right" src="pic">
+
+## Installation
+We will use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking.
+
+## Tweaking
+
+
