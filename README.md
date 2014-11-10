@@ -16,6 +16,7 @@ Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVir
 Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking. If you decide to isntall webmail interface Roundcube is recommended for it's simplicity.
 
 ## Tweaking
+This sections mentiones all files which need to be altered to make the solution working like mentioned on the pictures above. All files mentioned in this guide are available in the repository.
 
 #### Create user gpgmap
 
@@ -137,3 +138,7 @@ Adjust the **/etc/postfix/header_checks** and keep the Received header there, it
 /^X-Originating-IP:/         IGNORE
 /^x-cr-[a-z]*:/              IGNORE
 /^Thread-Index:/             IGNORE
+
+
+## Provisioning
+It is required to provision email aliases, destinations of these aliases and GPG keys for these alises. 
