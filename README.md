@@ -17,7 +17,7 @@ Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix
 
 ## Tweaking
 
-##### Install gpgit and it's dependencies:
+#### Install gpgit and it's dependencies:
 ```
 wget https://raw.githubusercontent.com/mikecardwell/gpgit/master/gpgit.pl
 ```
@@ -27,7 +27,7 @@ wget https://raw.githubusercontent.com/mikecardwell/gpgit/master/gpgit.pl
 #cpan install Mail::GnuPG
 ```
 
-##### Install expect
+#### Install expect
 
 ```
 apt-get install expect
@@ -64,14 +64,14 @@ chown gpgmap:gpgmap /var/gpg/trust_key.sh
 ```
  
 
-##### Disable postgrey
+#### Disable postgrey
 Disable postgrey as it is not desirable to delay any emails, destinations for the aliases are chosen by users. In **/etc/postfix/main.cf** comment out following line:
 
 ```
 # "check_policy_service inet:127.0.0.1:10023" enables Postgrey.
 ```
 
-##### Enable envelope rewriting
+#### Enable envelope rewriting
 Enable envelope rewriting so MAIL FROM field always contains your domain when sending the email to it's final destination. In **/etc/postfix/main.cf** set following:
 
 ```
