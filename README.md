@@ -17,6 +17,15 @@ Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix
 
 ## Tweaking
 
+#### Create user gpgmap
+
+```
+adduser --home /var/gpg gpgmap
+mkdir -p /var/gpg/.gnupg
+chown -R gpgmap /var/gpg
+chmod 700 /var/gpg/.gnupg
+```
+
 #### Install gpgit and it's dependencies:
 ```
 wget https://raw.githubusercontent.com/mikecardwell/gpgit/master/gpgit.pl
@@ -61,6 +70,15 @@ Change the ownership and add executable flag:
 ```
 chmod +x /var/gpg/trust_key.sh
 chown gpgmap:gpgmap /var/gpg/trust_key.sh
+```
+
+#### Create procmail recipe
+Create ** /etc/postfix/procmailrc.common** file and add following recipe. This recipe is used to pass the email thorough gpgit tool which will encrypt it by GPG key.
+
+```
+TO=`egrep "^T[oO]:.*@gpgalias.com.*|for.*@gpgalias.com.*" | perl -wne'while(/[\w\.]+@[\w\.]+\w+/g){print "$&\n"}' | head -1`
+:0 f
+  |/usr/local/bin/gpgencmail.pl --encrypt-mode prefer-inline $TO | /usr/sbin/sendmail -G -i $RECIPIENT
 ```
  
 
