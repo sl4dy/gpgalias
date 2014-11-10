@@ -7,7 +7,7 @@ Purpose of this solution is to encrypt incoming emails by PGP/GPG key and forwar
 c
 <img style="float: right" src="pic">
 
-Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVirus, SpamAssassin, Postgrey, Roundcube and Postfix Admin and [gpgit](https://github.com/mikecardwell/gpgit). All this software is installed from standard Ubuntu 12.04 repositories, unless said otherwise.
+Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVirus, SpamAssassin, Postgrey, Roundcube and Postfix Admin and [gpgit](https://github.com/mikecardwell/gpgit). All this software is installed from standard Ubuntu 12.04 repositories, unless mentioned otherwise.
 
 ## Detailed flow
 <img style="float: right" src="pic">
@@ -15,15 +15,8 @@ Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVir
 ## Installation
 Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking. If you decide to isntall webmail interface, Roundcube is recommended for it's simplicity.
 
-**IMPORTANT NOTE**: If you plan to use the Postfix Admin CLI interface mentioned in [Command line / Postfix Admin provisioning](https://github.com/sl4dy/gpgalias#command-line--postfix-admin-provisioning) section, install the Postfix Admin from SVN as it only SVN contains CLI interface to Postfix Admin (no need if you will use Postfix Admin web interface only). That means in step 11) in the guide mentioned above install the Postfix Admin this way:
+**IMPORTANT NOTE**:
 
-```
-apt-get install subversion
-mkdir /var/www/postfixadmin
-cd /var/www/postfixadmin
-svn co https://svn.code.sf.net/p/postfixadmin/code/trunk
-```
-**IMPORTANT NOTE 2**: 
 
 
 ## Tweaking
@@ -191,3 +184,18 @@ sudo rngd -r /dev/urandom
 ```
 /usr/bin/gpg --delete-key alias@gpgalias.com
 ```
+
+#### Create alias via Postfix Admin CLI
+
+```
+postfixadmin/scripts/postfixadmin-cli alias add alias@gpgalias.com --goto final@destination.com
+```
+
+#### Delete alias via Postfix Admin CLI
+
+```
+postfixadmin/scripts/postfixadmin-cli alias delete alias@gpgalias.com
+```
+
+### Webinterface provisioning
+Custom webinterface was created to allow endusers to provisioning their own aliases and GPG keys.
