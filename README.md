@@ -13,7 +13,18 @@ Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVir
 <img style="float: right" src="pic">
 
 ## Installation
-Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking. If you decide to isntall webmail interface Roundcube is recommended for it's simplicity.
+Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking. If you decide to isntall webmail interface, Roundcube is recommended for it's simplicity.
+
+**IMPORTANT NOTE**: If you plan to use the Postfix Admin CLI interface mentioned in (Command line / Postfix Admin provisioning)[https://github.com/sl4dy/gpgalias#command-line--postfix-admin-provisioning] section, install the Postfix Admin from SVN as it only SVN contains CLI interface to Postfix Admin (no need if you will use Postfix Admin web interface only). That means in step 11) in the guide mentioned above install the Postfix Admin this way:
+
+```
+apt-get install subversion
+mkdir /var/www/postfixadmin
+cd /var/www/postfixadmin
+svn co https://svn.code.sf.net/p/postfixadmin/code/trunk
+```
+**IMPORTANT NOTE 2**: 
+
 
 ## Tweaking
 This sections mentiones all files which need to be altered to make the solution working like mentioned on the pictures above. All files mentioned in this guide are available in the repository.
