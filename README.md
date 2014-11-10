@@ -132,7 +132,7 @@ This is required, otherwise SPF will be failing as mail.example.com is not permi
 Adjust the **/etc/postfix/header_checks** and keep the Received header there, it is required to keep the original recipient xxx@gpgalias.com address.
 
 ```
-\#/^Received:/                 IGNORE
+#/^Received:/                 IGNORE
 /^User-Agent:/               IGNORE
 /^X-Mailer:/                 IGNORE
 /^X-Originating-IP:/         IGNORE
@@ -154,6 +154,13 @@ All PGP operations are performed as gpgmap user.
 ```
 /usr/bin/gpg --import /path/to/gpgkey
 ```
+
+It is important to edit the imported key and set the trust to ultimate, otherwise gpgit will not work properly.
+```
+/usr/bin/gpg --edit-key alias@gpgalias.com
+```
+Type in "trust" and select "5 = I trust ultimately".
+
 #### Generate GPG key
 ```
 /usr/bin/gpg --genkey
@@ -167,4 +174,9 @@ sudo apt-get install rng-tools
 And run the generator; in separate terminal or as backround process:
 ```
 sudo rngd -r /dev/urandom
+```
+
+#### Delete GPG key
+```
+/usr/bin/gpg --delete-key alias@gpgalias.com
 ```
