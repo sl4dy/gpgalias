@@ -131,14 +131,40 @@ This is required, otherwise SPF will be failing as mail.example.com is not permi
 
 Adjust the **/etc/postfix/header_checks** and keep the Received header there, it is required to keep the original recipient xxx@gpgalias.com address.
 
-
+```
 \#/^Received:/                 IGNORE
 /^User-Agent:/               IGNORE
 /^X-Mailer:/                 IGNORE
 /^X-Originating-IP:/         IGNORE
 /^x-cr-[a-z]*:/              IGNORE
 /^Thread-Index:/             IGNORE
-
+```
 
 ## Provisioning
-It is required to provision email aliases, destinations of these aliases and GPG keys for these alises. 
+It is required to provision email aliases, destinations of these aliases and GPG keys for these alises. This can be done in gpg command line and Postfix Admin web interface. This is undesirable in case end users are supposed to provision their own aliases and GPG keys. Web interace was developed for user friendly end user provisioning.
+
+### Command line / Postfix Admin provisioning
+All PGP operations are performed as gpgmap user.
+
+#### List all GPG keys
+```
+/usr/bin/gpg --list-keys
+```
+#### Import GPG key
+```
+/usr/bin/gpg --import /path/to/gpgkey
+```
+#### Generate GPG key
+```
+/usr/bin/gpg --genkey
+```
+**WARNING**: This process requires enough of random entropy. To easily fullfil this condition install RNG utils:
+
+```
+sudo apt-get install rng-tools
+```
+
+And run the generator; in separate terminal or as backround process:
+```
+sudo rngd -r /dev/urandom
+```
