@@ -17,7 +17,7 @@ We will use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204
 
 ### Tweaking
 
-#### * Disabling postgrey
+* Disabling postgrey
 
 
 
