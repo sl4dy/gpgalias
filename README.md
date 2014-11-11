@@ -4,8 +4,8 @@ GPG/PGP encrypted email alias service
 This repository contains source codes and how-to installation guide for email alias service with GPG/PGP encryption.
 
 Purpose of this solution is to encrypt incoming emails by PGP/GPG key and forward them to the final destination. The high level logic is following:
-c
-<img style="float: right" src="pic">
+
+![](https://github.com/sl4dy/gpgalias/blob/master/samples/simple_flow.png)
 
 Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVirus, SpamAssassin, Postgrey, Roundcube and Postfix Admin and [gpgit](https://github.com/mikecardwell/gpgit). All this software is installed from standard Ubuntu 12.04 repositories, unless mentioned otherwise.
 
