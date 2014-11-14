@@ -13,11 +13,11 @@ Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVir
 ![](https://github.com/sl4dy/gpgalias/blob/master/samples/detailed_flow.png)
 
 ## Installation
-Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking. If you decide to isntall webmail interface, Roundcube is recommended for it's simplicity.
+Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mail server based on software mentioned above. This will be the starting point for additional tweaking. If you decide to install web mail interface, Roundcube is recommended for it's simplicity.
 
 
 ## Tweaking
-This sections mentiones all files which need to be altered to make the solution working like mentioned on the pictures above. All files mentioned in this guide are available in the repository. All actions are performed as root unless mentioned otherwise. All files mentioned in this guide are available in the repository for reference.
+This sections mentions all files which need to be altered to make the solution working like mentioned on the pictures above. All files mentioned in this guide are available in the repository. All actions are performed as root unless mentioned otherwise. All files mentioned in this guide are available in the repository for reference.
 
 #### Create user gpgmap
 
@@ -69,7 +69,7 @@ procmail unix - n n - - pipe
   -o flags=RO user=vmail:mail argv=/usr/bin/procmail -t -m USER=${user} EXTENSION=${extension} RECIPIENT=$(recipient) /etc/postfix/procmailrc.common
 ```
 
-The gpgfilter channel receives the email from postfix and passed it to procmail channel which runs in through **/etc/postfix/procmailrc.common**.
+The gpgfilter channel receives the email from postfix and passed it to procmail channel which passes it through **/etc/postfix/procmailrc.common**.
  
 
 #### Disable postgrey
@@ -108,8 +108,28 @@ Adjust the **/etc/postfix/header_checks** and keep the Received header there, it
 /^Thread-Index:/             IGNORE
 ```
 
+#### Adjust amavisd config:
+
+Edit **/etc/amavis/conf.d/50-user** so it contains following lines:
+
+```
+use strict;
+$max_servers  = 3;
+$sa_tag_level_deflt  = -9999;
+$spam_quarantine_to  = undef;
+$final_spam_destiny  = D_PASS;
+$local_domains_re = new_RE( qr'.+@.+'i );
+```
+#### Configure postfix to deliver local mail
+Edit **/etc/postfix/main.cf**:
+
+```
+smtp_host_lookup = dns, native
+mydestination = mail, localhost
+```
+
 ## Provisioning
-It is required to provision email aliases, destinations of these aliases and GPG keys for these alises. This can be done in gpg command line and Postfix Admin web interface. All GPG keys must be generated (or possibly imported) for the alias address and not for the destination address (e.g. the GPG key shall be generated for you@gpglias.com and NOT for you@finaldestination.com).
+It is required to provision email aliases, destinations of these aliases and GPG keys for these aliases. This can be done in gpg command line and Postfix Admin web interface. All GPG keys must be generated (or possibly imported) for the alias address and not for the destination address (e.g. the GPG key shall be generated for you@gpglias.com and NOT for you@finaldestination.com).
 
 ### Command line / Postfix Admin provisioning
 All GPG operations are performed as gpgmap user.
@@ -133,7 +153,7 @@ Type in "trust" and select "5 = I trust ultimately".
 ```
 /usr/bin/gpg --genkey
 ```
-**WARNING**: This process requires enough of random entropy. To easily fullfil this condition install RNG utils:
+**WARNING**: This process requires enough of random entropy. To easily fulfil this condition install RNG utils:
 
 ```
 sudo apt-get install rng-tools
