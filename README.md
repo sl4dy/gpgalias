@@ -184,4 +184,4 @@ The aliases can be created by using Postfix Admin CLI or using Postfix Admin web
 ```
 
 ## Sample encrypted email
-You can see sample encrypted email delivered to it's destination [here](https://github.com/sl4dy/gpgalias/blob/master/samples/encrypted_mail.txt).
+You can see sample encrypted email delivered to its destination [here](https://github.com/sl4dy/gpgalias/blob/master/samples/encrypted_mail.txt).
