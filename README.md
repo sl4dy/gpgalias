@@ -129,7 +129,7 @@ mydestination = mail, localhost
 ```
 
 ## Provisioning
-It is required to provision email aliases, destinations of these aliases and GPG keys for these aliases. This can be done in gpg command line and Postfix Admin web interface. All GPG keys must be generated (or possibly imported) for the alias address and not for the destination address (e.g. the GPG key shall be generated for you@gpglias.com and NOT for you@finaldestination.com).
+It is required to provision email aliases, destinations of these aliases and GPG keys for these aliases. This can be done in gpg command line and Postfix Admin web interface. All GPG keys must be generated (or possibly imported) for the alias address and not for the destination address (e.g. the GPG key shall be generated for you@gpgalias.com and NOT for you@finaldestination.com).
 
 ### Command line / Postfix Admin provisioning
 All GPG operations are performed as gpgmap user.
