@@ -1,0 +1,3 @@
+TO=`egrep "^T[oO]:.*@gpgalias.com.*|for.*@gpgalias.com.*" | perl -wne'while(/[\w\.]+@[\w\.]+\w+/g){print "$&\n"}' | head -1`
+:0 f
+  |/usr/local/bin/gpgencmail.pl --encrypt-mode prefer-inline $TO | /bin/sed '/X-Gpgit-Executed: True/,/-----BEGIN PGP MESSAGE-----/{//!d}' | /bin/sed '/-----END PGP MESSAGE-----/q' | sed 's/Content-Type:.*/Content-Type: text\/plain; charset=UTF-8/g' | /usr/sbin/sendmail -G -i $RECIPIENT

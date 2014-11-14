@@ -1,0 +1,71 @@
+Delivered-To: john.smith@gmail.com
+Received: by 10.194.126.10 with SMTP id mu10csp206233wjb;
+        Fri, 29 Aug 2014 05:34:36 -0700 (PDT)
+X-Received: by 10.152.87.139 with SMTP id ay11mr10891853lab.38.1409315676378;
+        Fri, 29 Aug 2014 05:34:36 -0700 (PDT)
+Return-Path: <delivery@gpgalias.com>
+Received: from mail.gpgalias.com (mail.gpgalias.com. [2a01:430:17:1::ffff:507])
+        by mx.google.com with ESMTPS id n6si9515279lag.74.2014.08.29.05.34.36
+        for <john.smith@gmail.com>
+        (version=TLSv1.1 cipher=ECDHE-RSA-RC4-SHA bits=128/128);
+        Fri, 29 Aug 2014 05:34:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of delivery@gpgalias.com designates 2a01:430:17:1::ffff:507 as permitted sender) client-ip=2a01:430:17:1::ffff:507;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of delivery@gpgalias.com designates 2a01:430:17:1::ffff:507 as permitted sender) smtp.mail=delivery@gpgalias.com;
+       dmarc=fail (p=NONE dis=NONE) header.from=outlook.com
+Received: by mail.gpgalias.com (Postfix, from userid 1001)
+	id 744171E425; Fri, 29 Aug 2014 14:34:35 +0200 (CEST)
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by mail.gpgalias.com (Postfix) with ESMTP id 35AA51E41E
+	for <john.smith@gmail.com>; Fri, 29 Aug 2014 14:34:34 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at mail.gpgalias.com
+X-Spam-Flag: NO
+X-Spam-Score: 0.921
+X-Spam-Level: 
+X-Spam-Status: No, score=0.921 tagged_above=-9999 required=6.31
+	tests=[FREEMAIL_FROM=0.001, HTML_MESSAGE=0.001,
+	RCVD_IN_DNSWL_NONE=-0.0001, SPF_FAIL=0.919] autolearn=no
+Received: from mail.gpgalias.com ([127.0.0.1])
+	by localhost (mail.gpgalias.com [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 8xFul6hF9erC for <john.smith@gmail.com>;
+	Fri, 29 Aug 2014 14:34:31 +0200 (CEST)
+Received: from DUB004-OMC4S27.hotmail.com (dub004-omc4s27.hotmail.com [157.55.2.102])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mail.gpgalias.com (Postfix) with ESMTPS id DD4EB1E40E
+	for <forward@gpgalias.com>; Fri, 29 Aug 2014 14:34:29 +0200 (CEST)
+Received: from DUB125-W19 ([157.55.2.71]) by DUB004-OMC4S27.hotmail.com with Microsoft SMTPSVC(7.5.7601.22724);
+	 Fri, 29 Aug 2014 05:34:28 -0700
+X-TMN: [XtRDkQlOIxbJ9MBtVS6BKABeGpOcu/4G]
+X-Originating-Email: [john.smith@outlook.com]
+Message-ID: <DUB125-W19F76EDC70CE02CE88FBC29DDB0@phx.gbl>
+Content-Type: text/plain; charset=UTF-8
+From: John Smith <john.smith@outlook.com>
+To: "forward@gpgalias.com" <forward@gpgalias.com>
+Subject: test
+Date: Fri, 29 Aug 2014 14:34:28 +0200
+Importance: Normal
+MIME-Version: 1.0
+X-OriginalArrivalTime: 29 Aug 2014 12:34:28.0656 (UTC) FILETIME=[934F7B00:01CFC385]
+X-Gpgit-Executed: True
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+hQEMA9LhKbvg3CutAQf9EzDSDZVVO+cDSogk0jN1KCIxQJllsDJjhTL6rO+xxBef
++9B5yFmjIZDWTvjitvDOt4H0Y6hcGi4ZtcFrq6+brKgIZaxY6yC8AlWeeZ76doRF
+gBUN5YxM9D4tSpX6b+q3Ta7dypIu4t8+Q44r+RginaOKJ38jACtrC+Oz3xgJK+Dp
+vkOWfq2ulYoA1WHTlSNhu/SFpBUl9Pzpkbp0LJAi0nj50SCtVa2TP4g4u02JWX73
++WilNDKiTQzP8LsoyEFTIefWwNI0/y8k0VJo6BxUBUyyOO2yALnrR3hCbpCRgNV2
+k73QbUULhBrvwoQUACzUabJCBeSzyn/HMkMkm4aFQ8nA6JILkmKqA0dqqEMDc0SF
+oR7Msz7Gy7L7DotBujEksa8D4+wBioha3RFSBxR8k1rEJaF5eG6KMGF7CCVS61bK
+H8baHKWufmCI0JbATXCU6BE5lKmj1mVZqJUxWcfewM0AMh49IBWUgmfMOqIIQ00v
+Oij/2SaCinSjGI8cOvF8g+0p93r/NtO0z9WMal0PqWKR+EmqplkeplaPq9+ruBho
+RzSUG5rHQHi5hhQPZKzZ/ERYiztWuLSdRuIRFesejIAWIyi0ZOqiEnnJhoOGXin1
+WzmEdZep+PW1TpjOaJ83n6PWa6uh7GEkCEtRaiWHCJmrYe9/5Bobo5vP1N/AF3bG
+Pn/TB5u417Yiti1/cxktBTRuDDOj8XO1pkEdnx7cgedchDbZDF4myEO0JY3Nfff5
+tICnLWS6iNk4rZB3Z3552+tGpJjQpG4zWQw8nUf1aaD4sGhJIMhkCg2wuoBVvwVz
+jRArZHIpFfHtbsQTc8BqTY8PQavk3SYB/WBffykUANaeTpqyxVy+d+xyqsD46Afr
+l/GWKtMG0ee46bzIVvXYWC0TXL4igQX9lWA=
+=pb1D
+-----END PGP MESSAGE-----
