@@ -2,7 +2,7 @@ GPG/PGP encrypted email alias service
 ========
 
 This repository contains source codes and how-to installation guide for email alias service with GPG/PGP encryption.
-
+p
 Purpose of this solution is to encrypt incoming emails by PGP/GPG key and forward them to the final destination. The high level logic is following:
 
 ![](https://github.com/sl4dy/gpgalias/blob/master/samples/simple_flow.png)
@@ -14,9 +14,6 @@ Solution is using Ubuntu 12.04 and Postfix, Dovecot, MySQL, Amavis, Clam AntiVir
 
 ## Installation
 Use [this](https://www.exratione.com/2012/05/a-mailserver-on-ubuntu-1204-postfix-dovecot-mysql/) guide to install mailserver based on software mentioned above. This will be the starting point for additional tweaking. If you decide to isntall webmail interface, Roundcube is recommended for it's simplicity.
-
-**IMPORTANT NOTE**:
-
 
 
 ## Tweaking
@@ -145,7 +142,7 @@ Adjust the **/etc/postfix/header_checks** and keep the Received header there, it
 ```
 
 ## Provisioning
-It is required to provision email aliases, destinations of these aliases and GPG keys for these alises. This can be done in gpg command line and Postfix Admin web interface. This is undesirable in case end users are supposed to provision their own aliases and GPG keys. Web interace was developed for user friendly end user provisioning.
+It is required to provision email aliases, destinations of these aliases and GPG keys for these alises. This can be done in gpg command line and Postfix Admin web interface.
 
 ### Command line / Postfix Admin provisioning
 All PGP operations are performed as gpgmap user.
@@ -196,6 +193,3 @@ postfixadmin/scripts/postfixadmin-cli alias add alias@gpgalias.com --goto final@
 ```
 postfixadmin/scripts/postfixadmin-cli alias delete alias@gpgalias.com
 ```
-
-### Webinterface provisioning
-Custom webinterface was created to allow endusers to provisioning their own aliases and GPG keys.
