@@ -194,18 +194,23 @@ NOTE: This image includes the custom provisioning frontend which is not mentione
 **Credentials and other useful info:**
 
 Domain: example.com
+
 Hostname: mail.example.com
 
 Services:
 192.168.56.101/frontend
+
 192.168.56.101/postfixadmin
+
 192.168.56.101/roundcube
 
 UNIX:
+
 project/project
 root/project
 
 Postfixadmin:
+
 postfixadmin@example.com / project
 
 Mysql root password:
