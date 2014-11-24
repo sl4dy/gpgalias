@@ -185,3 +185,28 @@ The aliases can be created by using Postfix Admin CLI or using Postfix Admin web
 
 ## Sample encrypted email
 You can see sample encrypted email delivered to its destination [here](https://github.com/sl4dy/gpgalias/blob/master/samples/encrypted_mail.txt).
+
+## Virtualbox VDI image
+You can download VDI image with working solution in samples directory. Just import the VDI to Virtualbox. Two network interfaces are used - one with Virtualbox only network and one with NAT to access the Internet. The memory requirement is 1 GB, but 512 MB should work also.
+
+NOTE: This image includes the custom provisioning frontend which is not mentioned in this guide.
+
+**Credentials and other useful info:**
+
+Domain: example.com
+Hostname: mail.example.com
+
+Services:
+192.168.56.101/frontend
+192.168.56.101/postfixadmin
+192.168.56.101/roundcube
+
+UNIX:
+project/project
+root/project
+
+Postfixadmin:
+postfixadmin@example.com / project
+
+Mysql root password:
+project
