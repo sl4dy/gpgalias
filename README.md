@@ -198,20 +198,22 @@ Domain: example.com
 Hostname: mail.example.com
 
 Services:
+
 192.168.56.101/frontend
 
 192.168.56.101/postfixadmin
 
 192.168.56.101/roundcube
 
-UNIX:
+UNIX credentials:
 
 project/project
 root/project
 
-Postfixadmin:
+Postfixadmin credentials:
 
 postfixadmin@example.com / project
 
 Mysql root password:
+
 project
