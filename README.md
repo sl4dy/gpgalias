@@ -187,7 +187,7 @@ The aliases can be created by using Postfix Admin CLI or using Postfix Admin web
 You can see sample encrypted email delivered to its destination [here](https://github.com/sl4dy/gpgalias/blob/master/samples/encrypted_mail.txt).
 
 ## Virtualbox VDI image
-You can download VDI image with working solution in samples directory. Just import the VDI to Virtualbox. Two network interfaces are used - one with Virtualbox only network and one with NAT to access the Internet. The memory requirement is 1 GB, but 512 MB should work also.
+You can download VDI image with working solution [here](https://onedrive.live.com/redir?resid=51BE049EC23BE170!141&authkey=!AL0XuFvMXm9tiy0&ithint=file%2c7z). Just import the VDI to Virtualbox. Two network interfaces are used - one with Virtualbox only network and one with NAT to access the Internet. The memory requirement is 1 GB, but 512 MB should work also.
 
 NOTE: This image includes the custom provisioning frontend which is not mentioned in this guide.
 
